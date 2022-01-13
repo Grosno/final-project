@@ -1,0 +1,37 @@
+{
+  "type": "module",
+  "name": "1.server",
+  "version": "1.0.0",
+  "description": "Homework 35",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server",
+    "debug": "node --inspect src/server",
+    "test": "jest"
+  },
+  "author": "Albert Gabdrakhmanov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "mongoose": "^6.1.4",
+    "node-fetch": "^2.6.6",
+    "request-context": "^2.0.0",
+    "simple-node-logger": "^21.8.12",
+    "string-format": "^2.0.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.5",
+    "jest": "^27.4.5",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.1.6"
+  },
+  "jest": {
+    "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.jsx?$",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
+  }
+}

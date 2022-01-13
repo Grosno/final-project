@@ -1,0 +1,50 @@
+@import "./src/constants/style/commonStyles";
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $component-background-color-light;
+  font-size: 16px;
+  border-radius: 3px;
+  margin: 6px;
+  height: 100%;
+  width: 100%;
+  min-height: 40px;
+  max-height: 40px;
+
+
+
+  &__container {
+    display: inherit;
+    width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+
+    &__info {
+      @media screen and (max-width: 501px) {
+        font-size: 12px;
+      }
+      @media screen and (max-width: 400px) {
+        display: none;
+      }
+    }
+    &__buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      @media screen and (max-width: 400px) {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &_dark-theme {
+    background-color: $component-background-color-dark;
+    color: $text-color-dark-theme;
+  }
+}

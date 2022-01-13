@@ -1,0 +1,140 @@
+@import "./src/constants/style/commonStyles";
+
+.modal-edit {
+  position: fixed;
+  top: 22px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.55);
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: $component-background-color-light;
+    padding: 0 12px 12px 12px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    max-height: calc(100vh - 10px);
+    overflow: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    &__close {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+
+      .close-button {
+        text-align: end;
+        font-size: 20px;
+        width: 20px;
+        cursor: pointer;
+      }
+    }
+    &:hover {
+      cursor: default;
+    }
+    &_dark-theme {
+      background-color: $component-background-color-dark;
+    }
+  }
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 6px;
+
+    &__user, &__date {
+      font-weight: bold;
+      font-size: 15px;
+
+      img {
+        border-radius: 100%;
+        width: 40px;
+        margin-right: 12px;
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+
+    &__form {
+      &_dark-theme > div > div > label {
+        color: $text-color-dark-theme;
+      }
+    }
+    img {
+      margin: 6px 0;
+      border-radius: 10px;
+      width: 100%;
+    }
+    &__text {
+      font-size: 18px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+  }
+
+  &__picture {
+    &__user {
+      text-align: center;
+      height: 128px;
+
+      img {
+        border-radius: 5px;
+        height: 100%;
+      }
+    }
+    &__update-delete-buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 6px;
+
+      .update-button, .delete-button {
+        margin: 0 6px;
+        color: black;
+        &:hover {
+          color: $hover-color;
+          cursor: pointer;
+        }
+        &_dark-theme {
+          color: $text-color-dark-theme;
+        }
+        &_dark-theme > div > span {
+          color: $text-color-dark-theme;
+        }
+      }
+      .update-button > div > span {
+        &:hover {
+          color: $hover-color;
+        }
+      }
+      .delete-button {
+        padding-left: 12px;
+        border-left: 1px solid rgba(0,0,0,0.2);
+        &_dark-theme {
+          border-left: 1px solid rgba(255,255,255,.2);
+        }
+      }
+    }
+  }
+  .disabled {
+    pointer-events: none;
+    cursor: default;
+    color: #888;
+  }
+}

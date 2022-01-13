@@ -1,0 +1,23 @@
+@import "./src/constants/style/commonStyles";
+
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  max-height: 23px;
+  width: 100%;
+
+  &_dark-theme {
+    color: $text-color-dark-theme;
+  }
+  .logo-text {
+    display: none;
+  }
+  @media screen and (max-width: 751px) {
+    justify-content: space-between;
+    .logo-text {
+      display: block;
+    }
+  }
+}

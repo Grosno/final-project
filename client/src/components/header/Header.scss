@@ -1,0 +1,121 @@
+@import "./src/constants/style/commonStyles";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  background-color: $component-background-color-light;
+  border: 1px solid $component-border-color;
+  border-radius: 3px;
+  height: 100%;
+  max-height: 66px;
+  width: 100%;
+  margin: 0 6px 6px 6px;
+  padding: 6px;
+  justify-content: center;
+  @media screen and (max-width: 501px) {
+    max-height: 80px;
+  }
+  //@media screen and (max-width: 550px) {
+  //  display: none;
+  //}
+
+  &__container {
+    display: inherit;
+    width: 1200px;
+    justify-content: space-between;
+    padding: 0 12px;
+
+    @media screen and (max-width: 501px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      *, * > a {
+        font-size: 16px;
+      }
+    }
+  }
+  &__logo {
+    display: inherit;
+    align-items: center;
+
+    &__icon {
+      width: 40px;
+    }
+    &__title {
+      color: black;
+      margin: 6px;
+      font-weight: bold;
+      font-size: 24px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    @media screen and (max-width: 751px) {
+      display: none;
+    }
+  }
+  &__menu {
+    display: inherit;
+    align-items: center;
+
+    &__title {
+      font-size: 20px;
+      padding: 6px;
+      color: black;
+
+      &:hover {
+        color: $hover-color;
+        cursor: pointer;
+      }
+    }
+  }
+  &__authorization {
+    display: inherit;
+    align-items: center;
+    font-size: 20px;
+
+    &__log-in, &__registration, &__logged, &__logout {
+      color: black;
+      padding: 6px;
+      &:hover {
+        color: $hover-color;
+        cursor: pointer;
+      }
+    }
+    &__registration, &__logout {
+      border-left: 1px solid rgba(0,0,0, .15);
+
+      &_dark-theme {
+        border-left: 1px solid rgba(255,255,255, .25);
+      }
+    }
+    &__logged {
+      display: flex;
+      align-items: center;
+
+      .default-avatar {
+        margin-right: 6px;
+      }
+      .user-avatar {
+        margin-right: 6px;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        overflow: hidden;
+      }
+      img {
+        margin-right: 6px;
+        width: 100%;
+      }
+    }
+  }
+  &_dark-theme {
+    background-color: $component-background-color-dark;
+    color: $text-color-dark-theme;
+    border-color: $component-background-color-dark;
+  }
+  &_dark-theme * {
+    color: $text-color-dark-theme;
+  }
+}
